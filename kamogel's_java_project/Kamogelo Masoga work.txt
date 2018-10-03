@@ -1,0 +1,1277 @@
+
+
+Condition Exercises:
+
+--------------Find largest number among 3 numbers
+
+public class largest{
+	public static void main String []args){
+		    double n1=2.3, n2=5.5, n3=1.4;
+        if(n1>=n2 && n1>=n3) {
+            System.out.println(n1 + " is the largest number");
+        }else if (n2>=n1 && n2>=n3){
+            System.out.println(n2 + " Is the largest nubmer");
+        }else {
+            System.out.println(n3 + " is the largest");
+        }
+    }
+}
+
+
+
+
+------------Find second largest number among 3 numbers
+
+
+import java.util.Scanner;
+
+public class Second_Max {
+
+    public static void main(String[] args) {
+     int max=0, scond_max=0, temp=0, num;
+     Scanner scn = new Scanner(System.in);
+     System.out.println("Enter the number of numbers you want to capture: ");
+     num=scn.nextInt();
+     System.out.println("Enter the numbers: ");
+     for (int i=0;i<num;i++){
+         if(num==i){
+             max=scn.nextInt();
+         }else {
+             temp=scn.nextInt();
+         }if (temp>max){
+             scond_max=max;
+             max=temp;
+         }else if (temp> scond_max){
+             scond_max=temp;
+         }
+     }
+     scn.close();
+     System.out.println("Second max number is: " + scond_max);
+    }
+}
+
+
+---------------Find largest number among 7 numbers
+
+import java.util.Scanner;
+
+public class largest_num_among_7 {
+
+    public static void main(String[] args) {
+      int num, max;
+      Scanner scn = new Scanner(System.in);
+      System.out.println("Enter number to be captured: ");
+      num=scn.nextInt();
+      int a[]=new int[num];
+      System.out.println("Enter numbers; ");
+      for (int i=0; i<num; i++){
+          a[i]=scn.nextInt();
+      }max = a[0];
+        for(int i = 0; i < num; i++)
+        {
+            if(max < a[i])
+            {
+                max = a[i];
+            }
+        }
+        System.out.println("Maximum value:"+max);
+    }
+}
+
+------------------Print numbers from 1 to N, But if the number is multiple of 3 then print "FIZZ" and if the number is multiple of 5 then print "BUZZ". But if the number is multiple of both 3 and 5 then print only "FIZZBUZZ".
+
+public class FizzBuzz {
+
+    public static void main(String[] args) {
+        for(int i = 1; i <= 50; i++) {
+            if(i % (3*5) == 0) System.out.println("FizzBuzz");
+            else if(i % 5 == 0) System.out.println("Buzz");
+            else if(i % 3 == 0) System.out.println("Fizz");
+            else System.out.println(i);
+        }
+    }
+}
+
+--------------Check if a number is negative, positive or zero.
+
+import java.util.Scanner;
+
+public class NegetivePositive {
+
+    public static void main(String[] args) {
+      int num, max;
+      Scanner scn = new Scanner(System.in);
+      System.out.println("Enter number you want to check: ");
+      num=scn.nextInt();
+      scn.close();
+      if (num>0){
+          System.out.println(num + "Is positive");
+      }else if (num<0){
+          System.out.println(num + "Is negative");
+      }else {
+          System.out.println(num + "Is zero");
+      }
+      
+    }
+}
+
+
+--------------Check if a number is even or odd
+
+import java.util.Scanner;
+
+public class EvenOdd {
+
+    public static void main(String[] args) {
+      int num, max;
+      Scanner scn = new Scanner(System.in);
+      System.out.println("Enter number you want to check: ");
+      num=scn.nextInt();
+      scn.close();
+      if ((num/2)*2 == num){
+          System.out.println(num+ " Is Even");
+      }else {
+          System.out.println(num+ " Is odd");
+      }
+    }
+}
+
+------------Check if a year is leap year or not
+
+import java.util.Scanner;
+
+public class LeapYear {
+
+    public static void main(String[] args) {
+      int year;
+      Scanner scn = new Scanner(System.in);
+      System.out.println("Enter year you want to check: ");
+      year=scn.nextInt();
+      scn.close();
+      if ((year % 4 ==0) && (year % 100 !=0)){
+          System.out.println(year+ " Is a leap year");
+      }else if (year%400==0){
+          System.out.println(year+ " Is a leap year");
+      }else {
+          System.out.println(year+ " is not a leap year");
+      }
+    }
+}
+
+
+
+Iteration Exercises:
+
+------------Find largest number from an array of numbers
+
+
+import java.util.Scanner;
+
+public class largest_num_in_Array {
+
+    public static void main(String[] args) {
+      int num, max;
+      Scanner scn = new Scanner(System.in);
+      System.out.println("Enter number to be captured: ");
+      num=scn.nextInt();
+      int a[]=new int[num];
+      System.out.println("Enter numbers; ");
+      for (int i=0; i<num; i++){
+          a[i]=scn.nextInt();
+      }max = a[0];
+        for(int i = 0; i < num; i++)
+        {
+            if(max < a[i])
+            {
+                max = a[i];
+            }
+        }
+        System.out.println("Maximum value:"+max);
+    }
+}
+
+-------------Find second largest number from an array of numbers
+
+public class ScnLgstArry {
+
+    public static void main(String[] args) {
+      int arr[]={14,19,20,13,11,30,90,86};
+      int large =arr[0];
+      int scond_largest =arr[0];
+         for (int i=0;i<arr.length;i++){
+            if (arr[i]>large){
+                scond_largest=large;
+                large=arr[i]; 
+            }else if (arr[i]>scond_largest){
+                scond_largest=arr[i];
+            }
+        }
+        System.out.println("\n Second largest number is: "+scond_largest);
+    }
+}
+
+
+--------------Find if a number is present in an array of numbers
+
+public class Present {
+    public static boolean Exist(int[]ar,int item){
+        for (int i:ar){
+            if (item==i){
+                return true;
+            }
+        }
+        return false;
+    }
+
+    public static void main(String[] args) {
+      int arr[]={14,19,20,13,11,30,90,86};
+        System.out.println(Exist(arr,11));
+        System.out.println(Exist(arr,55));
+    }
+}
+
+-------------Find number of occurrences of a number in an array of numbers
+
+import java.util.Scanner;
+
+public class NumOfOccurence {
+
+    static int countOccurrences(int arr[], int n, int x)
+    {
+        int res = 0;
+        for (int i=0; i<n; i++)
+            if (x == arr[i])
+                res++;
+        return res;
+    }
+    public static void main(String args[])
+    {
+        int arr[] = {1, 2, 2, 2, 2, 3, 4, 7 ,8 ,8 };
+        int n = arr.length;
+        Scanner scn = new Scanner(System.in);
+        System.out.println("Enter number you want to check: ");
+        int x=scn.nextInt();
+
+        System.out.println("Number: "+ x + " Occures "+countOccurrences(arr, n, x));
+    }
+}
+
+-------------Find the number in an array of numbers with maximum occurrences
+
+import java.util.*;
+
+public class maximum_occurrences {
+
+    public static void main(String args[]){
+        List<String> list = Arrays.asList("1", "1","1","1","1","1","5","5","12","12","12","12","12","12","12","12","12","12","8");
+        int max = 0;
+        int curr = 0;
+        String currKey =  null;
+        Set<String> unique = new HashSet<String>(list);
+
+        for (String key : unique) {
+            curr = Collections.frequency(list, key);
+
+            if(max < curr){
+                max = curr;
+                currKey = key;
+            }
+        }
+
+        System.out.println("The number "  + currKey + " happens " + max + " times");
+
+    }
+}
+
+
+-------------Find number of spaces in a sentence
+
+import java.util.Scanner;
+
+public class NumberOfSpaces {
+
+    public static void main(String[] args) {
+        Scanner scn = new Scanner(System.in);
+        System.out.println("Enter the string: ");
+        String data = scn.nextLine();
+        int cnt = 0;
+        for (int i=0;i<data.length()-1;i++){
+            if (data.charAt(i)==' '){
+                cnt++;
+            }
+        }
+        System.out.println("The number of spaces in a given string are: "+ cnt);
+
+    }
+}
+-------------Find number of words in a sentence
+
+import java.util.Scanner;
+
+public class NumWordsInSent {
+
+    public static void main(String args[]){
+
+        Scanner scn = new Scanner(System.in);
+        System.out.println("Enter type a sentence you want to check words for: ");
+        String sentence = scn.nextLine();
+        String [] count_words = sentence.split(" ");
+        System.out.println("The Number of words in: "+ sentence+ "\nIs: "+ count_words.length);
+    }
+}
+
+
+-------------Replace all spaces in a sentence with underscore
+
+public class ReplaceUnderscore {
+
+    private static final char UNDERSCORE = '_';
+    private static final char SPACE = ' ';
+
+    public static String replace(String input) {
+
+        if (input.isEmpty()) {
+            return input;
+        }
+        StringBuilder output = new StringBuilder();
+        char prevChar = input.charAt(0);
+        if (prevChar == UNDERSCORE) {
+            output.append(SPACE);
+        } else {
+            output.append(prevChar);
+        }
+        for (int i = 1; i < input.length(); i++) {
+            char currentChar = input.charAt(i);
+            if (currentChar == UNDERSCORE) {
+                if (currentChar != prevChar) {
+                    output.append(SPACE);
+                }
+            } else {
+                output.append(currentChar);
+            }
+            prevChar = currentChar;
+        }
+        return output.toString();
+    }
+}
+
+test case
+
+public class StripUnderscoreTest {
+
+    @Test
+    public void strip() throws Exception {
+        assertEquals(" ", ReplaceUnderscore.replace("_"));
+        assertEquals("a b c", ReplaceUnderscore.replace("a_b_c"));
+        assertEquals("a b c", ReplaceUnderscore.replace("a__b__c"));
+        assertEquals("a b c", ReplaceUnderscore.replace("a___b___c"));
+    }
+}
+
+
+-------------Sort an array of numbers in ascending order
+
+import java.util.Scanner;
+
+public class AscendingSort {
+
+    public static void main(String args[]){
+        int n, temp;
+        Scanner scn = new Scanner(System.in);
+        System.out.println("Enter number of elements you want in an array:");
+        n=scn.nextInt();
+        int a[]= new int[n];
+        System.out.println("Enter elements: ");
+        for (int i=0;i<n;i++){
+            a[i]=scn.nextInt();
+        }
+        for (int i=0;i<n;i++){
+            for (int j=i+1;j<n;j++){
+                if (a[i]>a[j]){
+                    temp=a[i];
+                    a[i]=a[j];
+                    a[j]=temp;
+                }
+            }
+        }
+        System.out.println("Ascending Order :");
+        for (int i =0;i<n-1;i++){
+            System.out.println(a[i]);
+        }
+        System.out.println(a[n-1]);
+    }
+}
+
+
+-------------Find all even numbers from an array of numbers
+
+import java.util.Scanner;
+
+public class evenNum {
+
+    public static void main(String args[]){
+        int n, temp;
+        Scanner scn = new Scanner(System.in);
+        System.out.println("Enter number of elements you want in an array:");
+        n=scn.nextInt();
+        int a[]= new int[n];
+        System.out.println("Enter elements: ");
+        for (int i=0;i<n;i++){
+            a[i]=scn.nextInt();
+        }
+       for (int i=0;i<n;i++){
+           if (a[i]%2!=0){
+               System.out.println(a[i]+ " even number");
+           }else {
+               System.out.println(a[i]+ " Odd number");
+           }
+       }
+    }
+}
+
+
+-------------Generate fibonacci series from 1 to N
+
+import java.util.Scanner;
+
+public class Fibonacci_Series {
+    static int n1=1, n2=2, n3=0;
+
+    static void printFibonacci(int count){
+        if(count>0){
+            n3 = n1 + n2;
+            n1 = n2;
+            n2 = n3;
+            System.out.print(n3 + " ");
+            printFibonacci(count-1);
+        }
+    }
+    public static void main(String args[]){
+        Scanner scn = new Scanner(System.in);
+        System.out.println("Enter number you want to generate series for: ");
+        int count=scn.nextInt();
+        System.out.print(n1+" "+n2);//printing 0 and 1
+        printFibonacci(count-2);//n-2 because 2 numbers are already printed
+    }
+}
+
+-------------Reverse a string
+
+import java.util.Scanner;
+
+public class ReversString {
+
+    public static void main(String args[]){
+        String original, reverse = "";
+        Scanner in = new Scanner(System.in);
+        System.out.println("Enter a string to reverse");
+        original = in.nextLine();
+        int length = original.length();
+        for (int i = length - 1 ; i >= 0 ; i--) {
+            reverse = reverse + original.charAt(i);
+        }
+        System.out.println("Reverse of the string: " + reverse);
+    }
+}
+
+
+-------------Convert numeric string value to number like "1234" -> 1234
+
+public class ConvertNumToString {
+
+    public static void main(String args[]){
+        String numberAsString = "1234";
+        int number = Integer.parseInt(numberAsString);
+        System.out.println("The number is: " + number);
+    }
+}
+
+-------------Find the maximum difference between two consecutive items in an array of numbe
+
+public class MaximumDiffrence  
+{ 
+
+    int maxDiff(int arr[], int arr_size){ 
+        int max_diff = arr[1] - arr[0];  
+        for (int i=0; i<arr_size;i++){ 
+            for (int j =i+1; j<arr_size;j++){ 
+                if (arr[j]-arr[i]>max_diff) 
+                    max_diff=arr[j]-arr[i]; 
+            } 
+        } 
+        return max_diff; 
+    }
+    public static void main(String[] args)  { 
+        MaximumDiffrence maxdif = new MaximumDiffrence(); 
+        int arr[] = {1, 2, 90, 10, 110}; 
+        System.out.println("Maximum differnce is " +  maxdif.maxDiff(arr, 5)); 
+    } 
+} 
+ 
+
+
+-------------Count number of digits in a number
+
+public class NumberDigits {
+
+    public static void main(String[] args){
+
+        int count = 0, num = 3452;
+
+        while(num != 0){
+        
+            // num = num/10
+            num /= 10;
+            ++count;
+        }
+
+        System.out.println("Number of digits: " + count);
+    }
+}
+
+-------------Calculate sum of digits in a number
+
+import java.util.Scanner;
+public class Digit_Sum 
+{
+    public static void main(String args[])
+    {
+        int m, n, sum = 0;
+        Scanner s = new Scanner(System.in);
+        System.out.print("Enter the number:");
+        m = s.nextInt();
+        while(m > 0)
+        {
+            n = m % 10;
+            sum = sum + n;
+            m = m / 10;
+        }
+        System.out.println("Sum of Digits:"+sum);
+    }
+}
+
+-------------Find sum of all odd numbers between 1 to N
+
+class SumOfNum 
+{
+	public static void main(String args[]) 
+	{
+		int sum = 0;
+		for (int i = 1; i <= 100; i++) 
+		{
+			if (i % 2 != 0) 
+			{
+				sum = sum + i;
+			}
+		}
+		System.out.println("The Sum Of 100 Odd Numbers are:" + sum);
+	}
+}
+
+-------------Swap first & last digit of a number
+
+import java.util.Scanner;
+ 
+public class ReverseFirstLastDigits {
+ 
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Enter a number: ");
+        int input = scanner.nextInt();
+        int output = reverse(input);
+        System.out.println("Output = " + output);
+    }
+ 
+    public static int reverse(int input) {
+        String inputString = String.valueOf(input);
+        String outputString;
+        if (inputString.length() == 1) {
+            outputString = inputString;
+        } else {
+            char firstChar = inputString.charAt(0);
+            char lastChar = inputString.charAt(inputString.length() - 1);
+            String remaining = inputString.substring(1, inputString.length() - 1);
+            outputString = lastChar + remaining + firstChar;
+        }
+        int output = Integer.parseInt(outputString);
+        return output;
+    }
+}
+
+-------------Check if an alphabet is vowel or consonant
+
+import java.util.Scanner;
+class VowelConsonant
+{
+   public static void main(String[ ] arg)
+   {
+	boolean isVowel=false;;
+	Scanner scanner=new Scanner(System.in);
+	System.out.println("Enter a character : ");
+	char ch=scanner.next().charAt(0); 
+	scanner.close();
+	switch(ch)
+	{
+	   case 'a' :
+	   case 'e' :
+    	   case 'i' :
+	   case 'o' :
+	   case 'u' :
+	   case 'A' :
+	   case 'E' :
+	   case 'I' :
+	   case 'O' :
+	   case 'U' : isVowel = true;
+	}
+	if(isVowel == true) {
+	   System.out.println(ch+" is  a Vowel");
+	}
+	else {
+	   if((ch>='a'&&ch<='z')||(ch>='A'&&ch<='Z'))
+		System.out.println(ch+" is a Consonant");
+	   else
+		System.out.println("Input is not an alphabet");		
+        }
+   }
+}
+-------------Reverse a number
+
+import java.util.Scanner;
+ 
+class ReverseNumber
+{
+   public static void main(String args[])
+   {
+      int n, reverse = 0;
+         
+      System.out.println("Enter an integer to reverse");
+      Scanner in = new Scanner(System.in);
+      n = in.nextInt();
+         
+      while(n != 0)
+      {
+          reverse = reverse * 10;
+          reverse = reverse + n%10;
+          n = n/10;
+      }
+       
+      System.out.println("Reverse of the number is " + reverse);
+   }
+}
+
+
+
+Star Pattern Exercises
+
+
+-------------Square Star Pattern
+
+
+public class Square {
+
+    public static void main(String args[]){
+     int num=5;
+     for (int i=0;i<num;i++){
+         for (int j=0;j<num;j++){
+             System.out.print("*");
+         }
+         System.out.println();
+     }
+    }
+}
+
+-------------Hollow Square Star Pattern
+
+public class HollowSquare {
+
+    public static void main(String args[]){
+        int num = 5;
+
+        for (int i = 1; i <= num; i++) {
+            for (int j = 1; j <= num; j++) {
+                if (i == 1 || i == num || j == 1 || j == num) {
+                    System.out.print("*");
+                }else {
+                    System.out.print(" ");
+                }
+            }
+            System.out.println();
+        }
+    }
+}
+
+-------------Hollow Square Star Pattern with Diagonal
+
+-------------Rhombus Star Pattern
+
+public class Rhombus {
+
+    public static void main(String args[]){
+
+
+        // Number of rows
+        final int n = 5;
+
+        for (int i = 1; i <= n; i++)
+        {
+            // Print space
+            for (int j = i; j < n; j++) {
+                System.out.print(' ');
+            }
+
+            // Print n stars
+            for (int j = 1; j <= n; j++) {
+                System.out.print('*');
+            }
+
+            // Move to the next row
+            System.out.print(System.lineSeparator());
+        }
+
+    }
+}
+
+
+-------------Hollow Rhombus Star Pattern
+
+public class HollowRhombus {
+
+    public static void main(String args[]){
+        int n=5;
+        for(int i=1;i<=n;i++) {
+            for(int j=1;j<=n-i;j++){
+                System.out.print(" ");
+            }
+            if(i==1 || i==n)
+                for(int j=1;j<=n;j++) {
+                    System.out.print("*");
+                }
+            else {
+                for(int j=1;j<=n;j++){
+                    if(j==1 || j==n)
+                        System.out.print("*");
+                    else
+
+                        System.out.print(" ");
+                }
+            }
+            System.out.println();
+
+        }
+
+    }
+}
+
+
+-------------Mirrored Rhombus Star Pattern
+
+
+import java.util.Scanner;
+
+public class MirroredRhombus {
+
+    public static void main(String args[]){
+
+
+        Scanner sc = new Scanner(System.in);
+        int size = 0;
+        Character c ;
+        System.out.println("Enter size of the Rhombus : ");
+        size = sc.nextInt();
+        System.out.println("Which character you want to use : ");
+        c = sc.next().charAt(0);
+        for (int row = 0;row < size ; row++){
+            //first print the space
+            for (int space = size - row ; space < size ; space ++){
+                System.out.print(" ");
+            }
+            for (int i = 0 ; i<size ; i++){
+                System.out.print(c);
+            }
+            System.out.println();
+        }
+
+    }
+}
+
+-------------Hollow Mirrored Rhombus Star Pattern
+
+public class HollowMirrored {
+
+    public static void main(String args[]){
+
+
+        // Number of rows
+        final int n = 5;
+
+        for (int i = 1; i <= n; i++)
+        {
+            // Print space
+            for (int j = 1; j < i; j++) {
+                System.out.print(' ');
+            }
+
+            for (int j = 1; j <= n; j++)
+            {
+                // Print '*' for boundaries
+                if (i == 1 || i == n || j == 1 || j == n) {
+                    System.out.print('*');
+                }
+                else {
+                    System.out.print(' ');
+                }
+            }
+
+            // Move to the next row
+            System.out.print(System.lineSeparator());
+        }
+
+    }
+}
+
+-------------Right Triangle Star Pattern
+
+public class RightTriangle {
+
+    public static void main(String args[]){
+
+
+        // n is number of rows
+        final int n = 5;
+
+        // Do for each row
+        for (int i = 1; i <= n; i++)
+        {
+            // Print '*' i times
+            for (int j = 1; j <= i; j++) {
+                System.out.print('*');
+            }
+
+            // Move to the next line
+            System.out.print(System.lineSeparator());
+        }
+
+    }
+}
+
+-------------Hollow Right Triangle Star Pattern
+
+
+public class HollowRight {
+
+    public static void main(String args[]){
+
+
+        // n is number of rows
+        final int n = 5;
+
+        // Do for each row
+        for (int i = 1; i <= n; i++)
+        {
+            // Print '*' i times
+            for (int j = 1; j <= i; j++)
+            {
+                // Print '*' for boundaries
+                if (i == n || j == 1 || j == i) {
+                    System.out.print('*');
+                }
+                else {
+                    System.out.print(' ');
+                }
+            }
+
+            // Move to the next line
+            System.out.print(System.lineSeparator());
+        }
+
+    }
+}
+
+-------------Mirrored Right Triangle Star Pattern
+
+public class MirroredRight {
+
+    public static void main(String args[]){
+
+
+        // n is number of rows
+        final int n = 5;
+
+        // Run loop n times
+        for (int i = 1; i <= n; i++)
+        {
+            // Loop for printing space
+            for (int j = 1; j <= n - i; j++) {
+                System.out.print(' ');
+            }
+
+            // Loop for printing '*'
+            for (int k = 1; k <= i; k++) {
+                System.out.print('*');
+            }
+
+            // Move to the next row
+            System.out.print(System.lineSeparator());
+        }
+
+    }
+}
+
+-------------Hollow Mirrored Right Triangle Star Pattern
+
+public class HollowMirroredRightTriangle {
+
+    public static void main(String args[]){
+
+
+        // n is number of rows
+        final int n = 5;
+
+        // Run loop n times
+        for (int i = 1; i <= n; i++)
+        {
+            // Loop for printing space
+            for (int j = 1; j <= n - i; j++) {
+                System.out.print(' ');
+            }
+
+            // Loop for printing '*'
+            for (int k = 1; k <= i; k++)
+            {
+                // Print '*' for boundaries
+                if (i == n || k == 1 || k == i) {
+                    System.out.print('*');
+                }
+                else {
+                    System.out.print(' ');
+                }
+            }
+
+            // Move to the next row
+            System.out.print(System.lineSeparator());
+        }
+
+    }
+}
+ 
+-------------Inverted Right Triangle Star Pattern
+
+public class InvertedRightTriangle {
+
+    public static void main(String args[]){
+
+
+
+        // n is number of rows
+        final int n = 5;
+
+        // Do for each row
+        for (int i = n; i >= 1; i--)
+        {
+            // Print '*' i times
+            for (int j = 1; j <= i; j++) {
+                System.out.print('*');
+            }
+
+            // Move to the next line
+            System.out.print(System.lineSeparator());
+        }
+
+    }
+}
+
+-------------Hollow Inverted Right Triangle Star Pattern
+
+public class HollowInvertedRight {
+
+    public static void main(String args[]){
+        // n is number of rows
+        final int n = 5;
+
+        // Do for each row
+        for (int i = n; i >= 1; i--)
+        {
+            // Print '*' i times
+            for (int j = 1; j <= i; j++) {
+                {
+                    // Print '*' for boundaries
+                    if (i == n || j == 1 || j == i) {
+                        System.out.print('*');
+                    }
+                    else {
+                        System.out.print(' ');
+                    }
+                }
+            }
+            // Move to the next line
+            System.out.print(System.lineSeparator());
+        }
+
+    }
+}
+
+-------------Inverted Mirrored Right Triangle Star Pattern
+
+public class InvertedMirroredRight {
+
+    public static void main(String args[]){
+        // n is number of rows
+        final int n = 5;
+
+        for (int i = 1; i <= n; i++)
+        {
+            // Loop for printing space
+            for (int j = 1; j < i; j++) {
+                System.out.print(' ');
+            }
+
+            // Loop for printing '*'
+            for (int k = i; k <= n; k++) {
+                System.out.print('*');
+            }
+
+            // Move to the next line
+            System.out.print(System.lineSeparator());
+        }
+
+    }
+}
+
+
+-------------Hollow Inverted Mirrored Right Triangle Star Pattern
+
+public class HollowInvertedMirrored  {
+
+    public static void main(String args[]){
+        // n is number of rows
+        final int n = 5;
+
+        for (int i = 1; i <= n; i++)
+        {
+            // Loop for printing space
+            for (int j = 1; j < i; j++) {
+                System.out.print(' ');
+            }
+
+            // Loop for printing '*'
+            for (int k = i; k <= n; k++) {
+                // Print '*' for boundaries
+                if (i == 1 || k == i || k == n) {
+                    System.out.print('*');
+                }
+                else {
+                    System.out.print(' ');
+                }
+            }
+
+            // Move to the next line
+            System.out.print(System.lineSeparator());
+        }
+
+    }
+}
+
+-------------Pyramid Star Pattern
+
+
+public class Pyramid {
+
+    public static void main(String args[]){
+
+        n = 5;
+        space = n - 1;
+        for (j = 1; j <= n; j++){
+            for (i = 1; i <= space; i++){
+                System.out.print(" ");
+            }
+            space--;
+            for (i = 1; i <= 2 * j - 1; i++){
+                System.out.print("*");
+            }
+            System.out.println("");
+        }
+        space = 1;
+    }
+}
+
+-------------Hollow Pyramid Star Pattern
+
+public class HollowPyramid {
+
+    public static void main(String args[]){
+        // n is number of rows
+        final int n = 5;
+
+        // Do for each row
+        for (int i = 1; i <= n; i++)
+        {
+            // Print space
+            for (int j = i; j < n; j++) {
+                System.out.print(' ');
+            }
+
+            // Print '*'
+            for (int k = 1; k < 2*i; k++)
+            {
+                // Print '*' for boundaries
+                if (i == n || (k == 1 || k == 2*i - 1)) {
+                    System.out.print('*');
+                }
+                else {
+                    System.out.print(' ');
+                }
+            }
+
+            // Move to the next line
+            System.out.print(System.lineSeparator());
+        }
+
+    }
+}
+
+-------------Inverted Pyramid Star Pattern
+
+
+public class InvertedPyramid {
+
+    public static void main(String args[]){
+        // n is number of rows
+        final int n = 5;
+
+        // Do for each row
+        for (int i = 1; i <= n; i++)
+        {
+            // Print space
+            for (int j = i; j < n; j++) {
+                System.out.print(' ');
+            }
+
+            // Print '*'
+            for (int k = 1; k < 2*i; k++) {
+                System.out.print('*');
+            }
+
+            // Move to the next line
+            System.out.print(System.lineSeparator());
+        }
+
+    }
+} 
+
+
+-------------Hollow Inverted Pyramid Star Pattern
+
+public class HollowInvertedPyramid {
+
+    public static void main(String args[]){
+        // n is number of rows
+        final int n = 5;
+
+        // Do for each row
+        for (int i = n; i >= 1; i--)
+        {
+            // Print space
+            for (int j = n; j > i; j--) {
+                System.out.print(' ');
+            }
+
+            // Print '*'
+            for (int k = 1; k < 2*i; k++) {
+                // Print '*' for boundaries
+                if (i == n || (k == 1 || k == 2*i - 1)) {
+                    System.out.print('*');
+                }
+                else {
+                    System.out.print(' ');
+                }
+            }
+
+            // Move to the next line
+            System.out.print(System.lineSeparator());
+        }
+
+    }
+}
+
+-------------Half Diamond Star Pattern
+
+
+public class HalfDiamond {
+
+    public static void main(String args[]){
+        final int n = 5;
+
+        // Print upper half
+        for (int i = 1; i <= n; i++)
+        {
+            // Print '*' i times
+            for (int j = 1; j <= i; j++) {
+                System.out.print('*');
+            }
+
+            // Move to the next line
+            System.out.print(System.lineSeparator());
+        }
+
+        // Print lower half
+        for (int i = n - 1; i >= 1; i--)
+        {
+            // Print '*' i times
+            for (int j = 1; j <= i; j++) {
+                System.out.print('*');
+            }
+
+            // Move to the next line
+            System.out.print(System.lineSeparator());
+        }
+
+    }
+}
+
+-------------Mirrored Half Diamond Star Pattern
+
+public class MirroredHalfDiamond {
+
+    public static void main(String args[]){
+
+        // n is number of rows
+        final int n = 5;
+
+        // Print upper half
+        for (int i = 1; i <= n; i++)
+        {
+            // Loop for printing space
+            for (int j = 1; j <= n - i; j++) {
+                System.out.print(' ');
+            }
+
+            // Loop for printing '*'
+            for (int k = 1; k <= i; k++) {
+                System.out.print('*');
+            }
+
+            // Move to the next row
+            System.out.print(System.lineSeparator());
+        }
+
+        // Print lower half
+        for (int i = 2; i <= n; i++)
+        {
+            // Loop for printing space
+            for (int j = 1; j < i; j++) {
+                System.out.print(' ');
+            }
+
+            // Loop for printing '*'
+            for (int k = i; k <= n; k++) {
+                System.out.print('*');
+            }
+
+            // Move to the next line
+            System.out.print(System.lineSeparator());
+        }
+
+    }
+}
+
+
